@@ -40,4 +40,17 @@ class Tenant extends Model
     {
         return $this->hasMany(Menu::class);
     }
+
+     public function commissionSchemes(): HasMany
+    {
+        return $this->hasMany(CommissionScheme::class);
+    }
+
+     /** @return HasMany<UserTenantRole, $this> */
+    public function tenantRoles(): HasMany
+    {
+        return $this->hasMany(UserTenantRole::class);
+    }
+
+
 }
